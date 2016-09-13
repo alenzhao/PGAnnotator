@@ -19,7 +19,7 @@ class GTFParser(file: File) {
 
   @throws(classOf[CordAnnotatorException])
   def parseOneGTFEntry(gtfLine:String): (GTFEntry) = {
-    val gtfLineArr = gtfLine.split(Constants.GTF_LINE_PROPERTY_SEP)
+    val gtfLineArr = gtfLine.split(Constants.GENERAL_LINE_TAB_PROPERTY_SEP)
     if(gtfLineArr.length != 9)
       throw CordAnnotatorException("The number of columns is incorrect for this line: " + gtfLine)
     GTFEntry(Chromosome.getChromosomeByName(gtfLineArr(0)), gtfLineArr(1), gtfLineArr(2), gtfLineArr(3).toInt, gtfLineArr(4).toInt,

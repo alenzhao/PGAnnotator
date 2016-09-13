@@ -32,6 +32,8 @@ case class GTFEntry(chromosome:Chromosome.Chromosome, source: String, feature:St
 
   def geneStatus: String     = getMapAttributes.getOrElse(Constants.GTF_GENE_STATUS_ATTRIBUTE, null)
 
+  def isFirstStrand: Boolean = (strand == Strand.FORWARD)
+
 }
 
 /**
@@ -169,5 +171,11 @@ object Offset extends Enumeration {
   val DEFAULT   = Offset("off0", 0)
   case class Offset(name: String, nName: Int) extends super.Val()
   implicit def convert(value: Value) = value.asInstanceOf[Offset]
+  def getOffSetByValue(value:Int): Offset = {
+    if(value == 1) return OFFSET_1
+    if(value == 2) return OFFSET_2
+    if(value == 3) return OFFSET_3
+    DEFAULT
+  }
 }
 

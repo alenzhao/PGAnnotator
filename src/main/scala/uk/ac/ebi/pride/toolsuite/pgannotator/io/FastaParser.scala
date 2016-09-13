@@ -45,7 +45,7 @@ class FastaParser(file: File) {
     * @return An iteratior of FastaEntry Iterator[FastaEntry]
     */
   def parseGzip: Iterator[FastaEntry] = {
-    val scanner = new Scanner(IOUtils.inputStream(file, true)).useDelimiter( """\n>""")
+    val scanner = new Scanner(IOUtils.inputStream(file, gzip = true)).useDelimiter( """\n>""")
     val it: Iterator[String] = new Iterator[String] {
       override def hasNext: Boolean = scanner.hasNext
       override def next(): String = scanner.next()

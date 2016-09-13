@@ -4,6 +4,11 @@ package uk.ac.ebi.pride.toolsuite.pgannotator.utils
   * General Constants use in CordAnnotator.
   */
 object Constants {
+  val SangerPTMPattern: String = "[\\(\\)]"
+
+
+  val GENERAL_LINE_TAB_PROPERTY_SEP              = "\t"
+  val GENERAL_LINE_COMMA_PROPERTY_SEP            = ","
 
   // Constants to parse a EMSEMBL Protein Entry from a FASTA Entry.
   val ENSEMBL_ACCESSION_POSITION                 = 0
@@ -20,12 +25,12 @@ object Constants {
   val GTF_GENE_NAME_ATTRIBUTE                    = "gene_name"
   val GTF_GENE_PROPERTY                          = "gene"
   val GTF_TRANSCRIPT_PROPERTY                    = "transcript"
-  val GTF_LINE_PROPERTY_SEP                      = "\t"
   val GTF_ATTRIBUTE_SEP                          = ";"
   val GTF_ATTRIBUTE_VALUE_SEP                    = "\""
   val GTF_CDS_PROPERTY                           = "CDS"
   val GTF_GENE_TYPE_ATTRIBUTE                    = "gene_type"
   val GTF_GENE_STATUS_ATTRIBUTE                  = "gene_status"
+
 
 
 
